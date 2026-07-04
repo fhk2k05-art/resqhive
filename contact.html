@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact | ResQHive Technologies</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+.contact-section{
+    padding:120px 10%;
+}
+
+.contact-container{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+.contact-info,
+.contact-form{
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:25px;
+    padding:40px;
+}
+
+.contact-info h2,
+.contact-form h2{
+    color:#1E90FF;
+    margin-bottom:25px;
+}
+
+.contact-item{
+    margin-bottom:25px;
+}
+
+.contact-item h3{
+    margin-bottom:8px;
+}
+
+.contact-item p{
+    color:#d0d0d0;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:15px;
+    margin-bottom:15px;
+    border:none;
+    border-radius:12px;
+    background:rgba(255,255,255,.08);
+    color:white;
+    outline:none;
+}
+
+.contact-form textarea{
+    height:180px;
+    resize:none;
+}
+
+.send-btn{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:#1E90FF;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.send-btn:hover{
+    box-shadow:0 0 20px #1E90FF;
+}
+
+.whatsapp-btn{
+    display:inline-block;
+    margin-top:20px;
+    background:#25D366;
+    color:white;
+    text-decoration:none;
+    padding:14px 24px;
+    border-radius:12px;
+}
+
+.status{
+    margin-top:15px;
+    text-align:center;
+    font-weight:600;
+}
+
+@media(max-width:768px){
+
+.contact-container{
+    grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="bg-animation"></div>
+
+<nav class="navbar">
+
+<div class="logo">
+<img src="assets/logo.png" alt="ResQHive Logo">
+<span>ResQHive</span>
+</div>
+
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="portfolio.html">Portfolio</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+
+<a href="#" class="btn">Get Quote</a>
+
+</nav>
+
+<section class="contact-section">
+
+<div class="section-title">
+<h2>Contact ResQHive Technologies</h2>
+</div>
+
+<div class="contact-container">
+
+<div class="contact-info">
+
+<h2>Get In Touch</h2>
+
+<div class="contact-item">
+<h3>📞 Phone</h3>
+<p>+91 8848797146</p>
+</div>
+
+<div class="contact-item">
+<h3>📧 Email</h3>
+<p>fhk2k05@gmail.com</p>
+</div>
+
+<div class="contact-item">
+<h3>🏢 Company</h3>
+<p>ResQHive Technologies</p>
+</div>
+
+<div class="contact-item">
+<h3>🚀 Product</h3>
+<p>ResQHive EmerGGo</p>
+</div>
+
+<div class="contact-item">
+<h3>💼 Services</h3>
+<p>
+Website Development<br>
+Web Applications<br>
+AI Solutions<br>
+E-Commerce Development
+</p>
+</div>
+
+<a href="https://wa.me/918848797146"
+target="_blank"
+class="whatsapp-btn">
+💬 Chat on WhatsApp
+</a>
+
+</div>
+
+<div class="contact-form">
+
+<h2>Send a Message</h2>
+
+<form id="contactForm">
+
+<input
+type="text"
+id="name"
+placeholder="Your Name"
+required>
+
+<input
+type="email"
+id="email"
+placeholder="Your Email"
+required>
+
+<input
+type="text"
+id="subject"
+placeholder="Subject"
+required>
+
+<textarea
+id="message"
+placeholder="Your Message"
+required></textarea>
+
+<button
+type="submit"
+class="send-btn">
+Send Message
+</button>
+
+<div
+id="status"
+class="status">
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<h2>ResQHive Technologies</h2>
+
+<br>
+
+<p>
+Building the Future, One Website at a Time.
+</p>
+
+</footer>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ResQHive Technologies</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#050816;
+color:white;
+overflow-x:hidden;
+}
+
+.bg-animation{
+position:fixed;
+width:100%;
+height:100%;
+z-index:-1;
+background:
+radial-gradient(circle at 20% 20%, rgba(30,144,255,.25), transparent 30%),
+radial-gradient(circle at 80% 30%, rgba(0,191,255,.25), transparent 30%),
+radial-gradient(circle at 50% 80%, rgba(30,144,255,.20), transparent 30%);
+animation:moveBg 12s infinite alternate;
+}
+
+@keyframes moveBg{
+100%{
+transform:scale(1.2) rotate(8deg);
+}
+}
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:25px 8%;
+backdrop-filter:blur(15px);
+background:rgba(5,8,22,.4);
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+}
+.brand-logo{
+    height:60px;
+    width:auto;
+
+    display:block;
+
+    object-fit:contain;
+
+    filter:
+    drop-shadow(0 0 8px rgba(30,144,255,.4));
+
+    transition:.3s ease;
+}
+
+.brand-logo:hover{
+    transform:scale(1.03);
+    filter:
+    drop-shadow(0 0 15px rgba(30,144,255,.7));
+}
+.logo img{
+    width:60px;
+    height:60px;
+
+    object-fit:cover;
+
+    border-radius:18px;
+
+    box-shadow:
+    0 0 15px rgba(30,144,255,.4);
+
+    transition:.3s ease;
+}
+.logo img:hover{
+transform:translateY(-2px) scale(1.05);
+
+box-shadow:
+0 0 20px rgba(30,144,255,.7),
+0 0 40px rgba(30,144,255,.3);
+}
+.logo span{
+font-size:26px;
+font-weight:700;
+}
+
+.navbar ul{
+display:flex;
+list-style:none;
+gap:30px;
+}
+
+.navbar a{
+text-decoration:none;
+color:white;
+transition:.3s;
+}
+
+.navbar a:hover{
+color:#1E90FF;
+}
+
+.quote-btn{
+background:#1E90FF;
+padding:12px 28px;
+border-radius:50px;
+}
+
+.hero{
+min-height:90vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:0 20px;
+position:relative;
+}
+
+.hero::before{
+content:'';
+position:absolute;
+width:500px;
+height:500px;
+background:#1E90FF;
+filter:blur(180px);
+opacity:.25;
+border-radius:50%;
+z-index:-1;
+}
+
+.badge{
+display:inline-block;
+padding:10px 20px;
+border:1px solid rgba(255,255,255,.15);
+border-radius:50px;
+margin-bottom:25px;
+}
+
+.hero h1{
+font-size:78px;
+line-height:1.1;
+max-width:1100px;
+}
+
+.hero h1 span{
+color:#1E90FF;
+}
+
+.hero p{
+font-size:22px;
+color:#cfcfcf;
+max-width:850px;
+margin:25px auto;
+line-height:1.8;
+}
+
+.hero-buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin-top:35px;
+}
+
+.primary-btn{
+background:#1E90FF;
+padding:15px 35px;
+border-radius:40px;
+text-decoration:none;
+color:white;
+font-weight:600;
+}
+
+.secondary-btn{
+border:1px solid #1E90FF;
+padding:15px 35px;
+border-radius:40px;
+text-decoration:none;
+color:white;
+font-weight:600;
+}
+
+.stats{
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+padding:80px 10%;
+}
+
+.stat-card{
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(15px);
+padding:35px;
+border-radius:20px;
+min-width:250px;
+text-align:center;
+}
+
+.stat-card h2{
+font-size:45px;
+color:#1E90FF;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:50px;
+}
+
+.section-title h2{
+font-size:50px;
+}
+
+.product{
+padding:120px 10%;
+}
+
+.product-card{
+max-width:900px;
+margin:auto;
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(15px);
+padding:60px;
+border-radius:30px;
+text-align:center;
+}
+
+.product-card h3{
+font-size:48px;
+color:#1E90FF;
+}
+
+.tagline{
+font-size:24px;
+margin:20px 0;
+font-weight:600;
+}
+
+.services{
+padding:120px 10%;
+}
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:25px;
+    margin-top:50px;
+}
+
+.service-card{
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(15px);
+    border-radius:25px;
+    padding:35px;
+    min-height:180px;
+    transition:.3s;
+    cursor:pointer;
+}
+
+.service-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 30px rgba(30,144,255,.4);
+}
+.service-card h3{
+color:#1E90FF;
+margin-bottom:15px;
+}
+
+footer{
+padding:80px;
+text-align:center;
+color:#aaa;
+}
+
+@media(max-width:768px){
+
+.navbar{
+flex-direction:column;
+gap:15px;
+}
+/* =========================
+   PREMIUM HERO LOGO
+========================= */
+
+..hero-brand{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.hero-brand img{
+    width:820px !important;
+    height:90px !important;
+
+    object-fit:contain;
+
+    display:block;
+    margin:0 auto 20px auto;
+}
+.hero-brand img{
+
+    width:820px;
+    max-width:80%;
+
+    height:auto;
+
+    object-fit:contain;
+
+    filter:
+    drop-shadow(0 0 15px rgba(30,144,255,.35));
+
+    transition:.3s ease;
+}
+
+.hero-brand img:hover{
+
+    transform:translateY(-3px) scale(1.02);
+
+    filter:
+    drop-shadow(0 0 25px rgba(30,144,255,.6));
+}
+.navbar ul{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.section-title h2{
+font-size:36px;
+}
+
+.product-card{
+padding:35px;
+}
+
+.product-card h3{
+font-size:32px;
+}
+
+}
+/* =====================================
+   WHATSAPP FLOAT BUTTON
+===================================== */
+
+.whatsapp-float{
+position:fixed !important;
+right:25px !important;
+bottom:25px !important;
+
+width:70px !important;
+height:70px !important;
+
+background:#25D366 !important;
+
+border-radius:50% !important;
+
+display:flex !important;
+justify-content:center !important;
+align-items:center !important;
+
+z-index:999999 !important;
+
+text-decoration:none !important;
+
+box-shadow:0 0 25px rgba(37,211,102,.8) !important;
+
+transition:.3s ease !important;
+}
+
+.whatsapp-float:hover{
+transform:scale(1.1);
+}
+
+.whatsapp-float i{
+font-size:40px !important;
+color:white !important;
+}
+.emerggo-logo{
+    width:110px;
+    height:110px;
+
+    display:block;
+    margin:0 auto 25px auto;
+
+    object-fit:contain;
+
+    border-radius:20px;
+
+    box-shadow:0 0 25px rgba(30,144,255,.25);
+
+    transition:.3s ease;
+}
+
+.emerggo-logo:hover{
+    transform:translateY(-3px);
+}
+/* =========================
+   PREMIUM CURVED LOGO CARD
+========================= */
+
+.hero-brand{
+    display:flex;
+    justify-content:center;
+    margin-bottom:30px;
+}
+
+.logo-card{
+    background:rgba(255,255,255,.03);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:35px;
+
+    padding:15px 30px;
+
+    box-shadow:
+        0 10px 40px rgba(0,0,0,.35),
+        0 0 20px rgba(30,144,255,.12);
+}
+
+.logo-card:hover{
+    transform:translateY(-3px);
+}
+
+.logo-card img{
+
+    width:500px;
+
+    max-width:100%;
+
+    height:auto;
+
+    display:block;
+
+    object-fit:contain;
+}
+.product-description{
+    margin-bottom:40px;
+    line-height:1.8;
+}
+
+.launch-btn-container{
+    margin-top:20px;
+    display:flex;
+    justify-content:center;
+}
+
+.launch-btn-container .primary-btn{
+    padding:16px 38px;
+    font-size:18px;
+}
+#vision .product-card h3{
+    color:#1E90FF;
+    margin-bottom:20px;
+}
+
+#vision .product-card p{
+    font-size:18px;
+    line-height:1.8;
+    color:#d8d8d8;
+}
+.service-card{
+    cursor:pointer;
+}
+</style>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<div class="bg-animation"></div>
+
+<nav class="navbar">
+
+<div class="logo">
+    <img src="assets/logo.png" alt="ResQHive Logo">
+    <span>ResQHive</span>
+</div>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#product">Product</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+<a href="#vision" class="quote-btn">Get Quote</a>
+</nav>
+
+<section class="hero" id="home">
+<div>
+
+<div class="hero-brand">
+    <div class="logo-card">
+        <img src="assets/horizontal.png" alt="ResQHive Technologies">
+    </div>
+</div>
+<h1>
+Transforming Ideas Into
+<span>Powerful Digital Experiences</span>
+</h1>
+
+<p>
+Founded by Fadil H, ResQHive Technologies builds modern websites,
+web applications and AI-powered digital solutions.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#product" class="primary-btn">
+View Product
+</a>
+
+<a href="#" class="secondary-btn">
+Start Project
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="stats">
+
+<div class="stat-card">
+<h2>25+</h2>
+<p>Projects Delivered</p>
+</div>
+
+<div class="stat-card">
+<h2>100%</h2>
+<p>Responsive Design</p>
+</div>
+
+<div class="stat-card">
+<h2>24/7</h2>
+<p>Support</p>
+</div>
+
+</section>
+
+<section class="product" id="product">
+
+<div class="section-title">
+<h2>Flagship Product</h2>
+</div>
+
+<div class="product-card">
+
+    <img src="assets/emerggo.png"
+         alt="ResQHive EmerGGo"
+         class="emerggo-logo">
+
+    <h3>ResQHive EmerGGo</h3>
+
+    <div class="tagline">
+        Fast Response. Smart Assistance. Safer Communities.
+    </div>
+
+   <p class="product-description">
+An intelligent emergency response platform connecting people
+with nearby assistance and emergency services in real time.
+</p>
+
+<div class="launch-btn-container">   
+   
+<a href="https://rapidrelief.onrender.com"
+
+   target="_blank"
+class="primary-btn">
+Launch EmerGGo
+</a>
+</div>
+</section>
+
+<section class="services" id="services">
+
+<div class="section-title">
+<h2>Our Services</h2>
+</div>
+
+<div class="service-card"
+onclick="selectService('Website Development')">
+
+<h3>🌐 Website Development</h3>
+<p>Professional business websites.</p>
+
+</div>
+
+<div class="service-card"
+onclick="selectService('Web Applications')">
+
+<h3>⚡ Web Applications</h3>
+<p>Custom web platforms.</p>
+
+</div>
+
+<div class="service-card"
+onclick="selectService('AI Solutions')">
+
+<h3>🤖 AI Solutions</h3>
+<p>AI-powered software systems.</p>
+
+</div>
+
+<div class="service-card"
+onclick="selectService('E-Commerce')">
+
+<h3>🛒 E-Commerce</h3>
+<p>Modern online stores.</p>
+
+</div>
+
+<div class="service-card"
+onclick="selectService('Cloud Deployment')">
+
+<h3>☁️ Cloud Deployment</h3>
+<p>Hosting and deployment services.</p>
+
+</div>
+
+<div class="service-card"
+onclick="selectService('Maintenance')">
+
+<h3>🔧 Maintenance</h3>
+<p>Long-term support and updates.</p>
+
+</div>
+</div>
+
+</section>
+<section id="about" class="product">
+
+    <div class="section-title">
+        <h2>About ResQHive</h2>
+    </div>
+
+    <div class="product-card">
+
+        <h3>Fadil H</h3>
+
+        <div class="tagline">
+            Founder of ResQHive Technologies
+        </div>
+
+        <p>
+            I am a Computer Science & Engineering (CSE) student passionate
+            about web development, AI solutions, software engineering and
+            building impactful digital products.
+        </p>
+
+        <br>
+
+        <p>
+            Creator of ResQHive EmerGGo —
+            Fast Response. Smart Assistance. Safer Communities.
+        </p>
+
+    </div>
+
+</section>
+
+<section id="contact" class="product">
+
+    <div class="section-title">
+        <h2>Contact ResQHive Technologies</h2>
+    </div>
+
+    <div class="product-card">
+
+        <p><strong>📞 Phone:</strong> +91 8848797146</p>
+
+        <br>
+
+        <p><strong>📧 Email:</strong> fhk2k05@gmail.com</p>
+
+        <br><br>
+
+      <form id="contactForm">
+
+<input
+type="hidden"
+id="selectedService"
+name="service">
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Your Name"
+                required
+                style="width:100%;padding:15px;margin-bottom:15px;border:none;border-radius:10px;">
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Your Email"
+                required
+                style="width:100%;padding:15px;margin-bottom:15px;border:none;border-radius:10px;">
+
+            <input
+                type="text"
+                id="subject"
+                placeholder="Subject"
+                required
+                style="width:100%;padding:15px;margin-bottom:15px;border:none;border-radius:10px;">
+
+            <textarea
+                id="message"
+                placeholder="Your Message"
+                required
+                style="width:100%;padding:15px;height:150px;border:none;border-radius:10px;"></textarea>
+
+            <br><br>
+
+            <button
+                type="submit"
+                class="primary-btn">
+                Send Message
+            </button>
+
+            <div id="status" style="margin-top:15px;"></div>
+
+        </form>
+
+    </div>
+
+</section>
+<section id="vision" class="product">
+
+<div class="section-title">
+<h2>Our Mission & Vision</h2>
+</div>
+
+<div class="product-card">
+
+<h3>🎯 Our Mission</h3>
+
+<p>
+To empower businesses, communities, and individuals through
+innovative web technologies, AI-powered solutions, and
+digital platforms that create meaningful real-world impact.
+</p>
+
+<br><br>
+
+<h3>🚀 Our Vision</h3>
+
+<p>
+To become a globally recognized technology company that
+connects people, ideas, and opportunities through intelligent,
+secure, and scalable digital solutions.
+</p>
+
+</div>
+
+</section>
+<footer>
+
+<h2>ResQHive Technologies</h2>
+
+<br>
+
+<p>
+Building the Future, One Website at a Time.
+</p>
+
+</footer>
+<script src="js/script.js"></script>
+<a href="https://wa.me/918848797146?text=Hello%20ResQHive,%20I%20am%20interested%20in%20your%20services."
+target="_blank"
+class="whatsapp-float">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+</a>
+</body>
+</html>
