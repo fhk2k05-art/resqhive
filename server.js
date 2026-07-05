@@ -52,17 +52,22 @@ console.log("EMAIL_PASS:", process.env.EMAIL_PASS ? "FOUND" : "NOT FOUND");
 console.log("Starting email send...");
 
 await transporter.sendMail({
-   ...
+    from: process.env.EMAIL_USER,
+    to: "fhk2k05@gmail.com",
+    subject: `ResQHive Contact Form - ${subject}`,
+    html: `
+        <h2>New Contact Form Submission</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Service:</strong> ${service}</p>
+        <p><strong>Subject:</strong> ${subject}</p>
+        <p><strong>Message:</strong></p>
+        <p>${message}</p>
+    `
 });
 
 console.log("Email sent successfully");
-            from: process.env.EMAIL_USER,
 
-            to: "fhk2k05@gmail.com",
-
-            subject: `ResQHive Contact Form - ${subject}`,
-
-            html: `
                 <h2>New Contact Form Submission</h2>
 
                 <p><strong>Name:</strong> ${name}</p>
