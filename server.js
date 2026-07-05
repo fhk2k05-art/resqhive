@@ -68,29 +68,12 @@ await transporter.sendMail({
 
 console.log("Email sent successfully");
 
-                <h2>New Contact Form Submission</h2>
+     console.log("Email sent successfully");
 
-                <p><strong>Name:</strong> ${name}</p>
-
-                <p><strong>Email:</strong> ${email}</p>
-<p><strong>Service:</strong> ${service}</p>
-
-
-                <p><strong>Subject:</strong> ${subject}</p>
-
-                <p><strong>Message:</strong></p>
-
-                <p>${message}</p>
-            `
-        });
-
-        console.log(`✅ New message received from: ${name}`);
-
-        res.status(200).json({
-            success: true,
-            message: "Message sent successfully!"
-        });
-
+res.status(200).json({
+    success: true,
+    message: "Message sent successfully!"
+});
     } catch (error) {
 
         console.error(error);
