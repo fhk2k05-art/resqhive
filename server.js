@@ -28,6 +28,13 @@ const transporter = nodemailer.createTransport({
         pass: process.env.EMAIL_PASS
     }
 });
+transporter.verify(function(error, success) {
+    if (error) {
+        console.log("EMAIL ERROR:", error);
+    } else {
+        console.log("EMAIL SERVER READY");
+    }
+});
 
 // Contact Form API
 app.post("/send-message", async (req, res) => {
