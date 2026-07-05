@@ -43,7 +43,10 @@ app.post("/send-message", async (req, res) => {
 
     try {
 
-        await transporter.sendMail({
+      console.log("EMAIL_USER:", process.env.EMAIL_USER);
+console.log("EMAIL_PASS:", process.env.EMAIL_PASS ? "FOUND" : "NOT FOUND");
+
+await transporter.sendMail({
 
             from: process.env.EMAIL_USER,
 
