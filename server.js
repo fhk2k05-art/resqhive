@@ -49,8 +49,13 @@ app.post("/send-message", async (req, res) => {
       console.log("EMAIL_USER:", process.env.EMAIL_USER);
 console.log("EMAIL_PASS:", process.env.EMAIL_PASS ? "FOUND" : "NOT FOUND");
 
-await transporter.sendMail({
+console.log("Starting email send...");
 
+await transporter.sendMail({
+   ...
+});
+
+console.log("Email sent successfully");
             from: process.env.EMAIL_USER,
 
             to: "fhk2k05@gmail.com",
